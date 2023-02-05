@@ -1,7 +1,8 @@
 ## Using individually addressable LED strips to simulate a gradient effect ##
 
 #>> Imports
-import machine, neopixel
+from machine import Pin
+import machine, neopixel, time
 
 #>> LED strip configuration
 n = 18 ## Number of LEDS on strip
