@@ -53,12 +53,24 @@ def rainbow_cycle(wait):
       np[i] = wheel(rc_index & 255)
     np.write()
     time.sleep_ms(wait)
+
 def clear(): # Sets all LEDs on strip to (0,0,0) color to clear set colors
   for i in range(n):
     np[i] = (0, 0, 0)
     np.write()
 
 #>> Main 
-while True:
-    for i in 
-np.write()
+for i in range(5):
+    print("Bouncing...")
+    bounce(23, 210, 15,200)  
+    # clear()
+    # time.sleep_ms(2400)
+    print("Cycling...")
+    cycle(123, 0, 154, 150)
+    # rainbow_cycle(3000)
+    # time.sleep_ms(2000)
+    # print("Rainbow Cycling...")
+    # rainbow_cycle(1)
+    # time.sleep_ms(2000)
+    # clear()
+    
