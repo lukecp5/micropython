@@ -10,8 +10,16 @@ p = 14 ## GPIO Pin number
 #>> Create a NeoPixel object(np)
 np = neopixel.NeoPixel(machine.Pin(p), n) 
 
+#>> Functions
+## Sets all LEDs on strip to (0,0,0) color to clear set colors
+def clear():
+  for i in range(n):
+    np[i] = (0, 0, 0)
+    np.write()
+    
 np[0] = (255, 0, 0)
 np[2] = (125, 204, 223)
 np[4] = (120, 153, 23)
 np[6] = (255, 0, 153)
+
 np.write()
