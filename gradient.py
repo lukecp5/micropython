@@ -8,7 +8,16 @@ n = 18 ## Number of LEDS on strip
 p = 14 ## GPIO Pin number
 np = neopixel.NeoPixel(machine.Pin(p), n) 
 
-#>> Functions
+
+## cycle
+def cycle(r, g, b, wait):
+  for i in range(n):
+    for j in range(n):
+      np[j] = (0, 0, 0)
+    np[i % n] = (r, g, b)
+    np.write()
+    time.sleep_ms(wait)
+
 def clear(): # Sets all LEDs on strip to (0,0,0) color to clear set colors
   for i in range(n):
     np[i] = (0, 0, 0)
