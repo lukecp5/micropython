@@ -1,12 +1,13 @@
-## Neopixel Library Testing
+## Using individually addressable LED strips to simulate a gradient effect ##
+
 #>> Imports
 import machine, neopixel
 
-#>> Functions
+#>> Board Config
 n = 18 ## Number of LEDS on strip
 p = 14 ## GPIO Pin number
 
-#* Create a NeoPixel object called np on the GPIO you’ve defined earlier
+#>> Create a NeoPixel object(np)
 np = neopixel.NeoPixel(machine.Pin(p), n) 
 
 np[0] = (255, 0, 0)
