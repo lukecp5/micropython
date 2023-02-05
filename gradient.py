@@ -8,6 +8,18 @@ n = 18 ## Number of LEDS on strip
 p = 14 ## GPIO Pin number
 np = neopixel.NeoPixel(machine.Pin(p), n) 
 
+#>> Functions for lighting effects
+## Bounce
+def bounce(r, g, b, wait):
+  for i in range(2 * n):
+    for j in range(n):
+      np[j] = (r, g, b)
+    if (i // n) % 2 == 0:
+      np[i % n] = (0, 0, 0)
+    else:
+      np[n - 1 - (i % n)] = (0, 0, 0)
+    np.write()
+    time.sleep_ms(wait)
 
 ## cycle
 def cycle(r, g, b, wait):
