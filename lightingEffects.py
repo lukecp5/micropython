@@ -29,7 +29,6 @@ def bounce(r, g, b, wait):
 # cycle
 
 
-
 def cycle(r, g, b, wait):
     for i in range(n):
         for j in range(n):
@@ -76,13 +75,10 @@ def clear():  # Sets all LEDs on strip to (0,0,0) color to clear set colors
 for i in range(5):
     print("Bouncing...")
     bounce(23, 210, 15, 200)
-    # clear()
-    # time.sleep_ms(2400)
     print("Cycling...")
     cycle(123, 0, 154, 150)
-    # rainbow_cycle(3000)
-    # time.sleep_ms(2000)
+
     # print("Rainbow Cycling...")
+    # todo: debug rainbow_cycle function and integrate it into the program
+    # rainbow_cycle(3000)
     # rainbow_cycle(1)
-    # time.sleep_ms(2000)
-    # clear()
