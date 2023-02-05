@@ -30,19 +30,19 @@ def cycle(r, g, b, wait):
     np.write()
     time.sleep_ms(wait)
 
-# ## function to go through all colors 
-# def wheel(pos):
-#   # Input a value 0 to 255 to get a color value.
-#   # The colours are a transition r - g - b - back to r.
-#   if pos < 0 or pos > 255:
-#     return (0, 0, 0)
-#   if pos < 85:
-#     return (255 - pos * 3, pos * 3, 0)
-#   if pos < 170:
-#     pos -= 85
-#     return (0, 255 - pos * 3, pos * 3)
-#   pos -= 170
-#   return (pos * 3, 0, 255 - pos * 3)
+## function to go through all colors 
+def wheel(pos):
+  # Input a value 0 to 255 to get a color value.
+  # The colours are a transition r - g - b - back to r.
+  if pos < 0 or pos > 255:
+    return (0, 0, 0)
+  if pos < 85:
+    return (255 - pos * 3, pos * 3, 0)
+  if pos < 170:
+    pos -= 85
+    return (0, 255 - pos * 3, pos * 3)
+  pos -= 170
+  return (pos * 3, 0, 255 - pos * 3)
 
 ## rainbow 
 def rainbow_cycle(wait):
@@ -58,9 +58,6 @@ def clear(): # Sets all LEDs on strip to (0,0,0) color to clear set colors
     np.write()
 
 #>> Main 
-np[0] = (255, 0, 0)
-np[2] = (125, 204, 223)
-np[4] = (120, 153, 23)
-np[6] = (255, 0, 153)
-
+while True:
+    for i in 
 np.write()
