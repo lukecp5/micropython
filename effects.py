@@ -6,6 +6,7 @@ import machine
 import neopixel
 import time
 
+
 # >> LED strip configuration
 n = 18  # Number of LEDS on strip
 p = 14  # GPIO Pin number
@@ -34,6 +35,7 @@ def cycle(r, g, b, wait):
         for j in range(n):
             np[j] = (0, 0, 0)
         np[i % n] = (r, g, b)
+        print(i % n)
         np.write()
         time.sleep_ms(wait)
 
@@ -43,6 +45,14 @@ def cycle(r, g, b, wait):
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.
+    """
+
+    Args:
+        pos (int): _description_
+
+    Returns:
+        _type_: _description_
+    """    
     if pos < 0 or pos > 255:
         return (0, 0, 0)
     if pos < 85:
@@ -72,11 +82,9 @@ def clear():  # Sets all LEDs on strip to (0,0,0) color to clear set colors
 
 
 # >> Main
-for i in range(5):
-    print("Bouncing...")
-    bounce(23, 210, 15, 200)
-    print("Cycling...")
-    cycle(123, 0, 154, 150)
+#while True:
+    # print("Cycling...")
+    #cycle(38, 0, 45, 85)
 
     # print("Rainbow Cycling...")
     # todo: debug rainbow_cycle function and integrate it into the program
